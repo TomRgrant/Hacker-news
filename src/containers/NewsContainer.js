@@ -35,7 +35,7 @@ const NewsContainer = () => {
         setSearchText(event.target.value)
     }
 
-    if (articles.length) {
+    if (!articles.length) return "Loading..."
 
         const filteredByTitle = articles.filter((article) => {
             return article.title.toLowerCase().includes(searchText.toLowerCase())
@@ -48,7 +48,6 @@ const NewsContainer = () => {
                     searchText={searchText} />
             </div>
         );
-    };
 };
 
 export default NewsContainer;
